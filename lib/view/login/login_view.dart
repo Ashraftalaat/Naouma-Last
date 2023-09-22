@@ -213,6 +213,7 @@ class LoginView extends StatelessWidget {
 
                         Directionality(
                           textDirection: TextDirection.rtl,
+                          //الغرض: تستخدم nbAppTextFieldWidget لإنشاء حقل نصي بتصميم معين.
                           child: CommonFunctions().nbAppTextFieldWidget(
                             phoneController,
                             'phone',
@@ -244,6 +245,7 @@ class LoginView extends StatelessWidget {
                         //         password: passwordController.text);
                         //   }
 
+                        //الغرض: تستخدم ConditionalBuilder widget لعرض Widget بناءً على شرط
                         ConditionalBuilder(
                           condition: state is! ShopLoginLoadingState,
                           builder: (context) => CommonFunctions()

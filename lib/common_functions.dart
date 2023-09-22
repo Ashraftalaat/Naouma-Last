@@ -31,8 +31,9 @@ class CommonFunctions {
     var image = await ImagePicker().pickImage(source: source);
     if (image != null) {
       imageFile = File(image.path);
-
+//الغرض: تستخدم split لفصل سلسلة نصية إلى أجزاء بناءً على محدد معين.
       imagename = imageFile.path.split("/").last;
+      //الغرض: تستخدم base64Encode لتحويل قائمة من البايتات إلى سلسلة نصية مشفرة باستخدام قاعدة 64
       base64 = base64Encode(imageFile.readAsBytesSync());
       //  imageFile.path.split("/").last;
 
@@ -43,6 +44,7 @@ class CommonFunctions {
   }
 
   static Future<File> imagePicker(BuildContext context, ThemeData themeData) {
+    //الغرض: تستخدم showCupertinoModalPopup لعرض نافذة منبثقة من نوع CupertinoPopup على الشاشة
     showCupertinoModalPopup(
         context: context,
         builder: (BuildContext context) {
@@ -158,6 +160,7 @@ class CommonFunctions {
         fontSize: 16.0);
   }
 
+//الغرض: تستخدم nbAppTextFieldWidget لإنشاء حقل نصي بتصميم معين.
   Widget nbAppTextFieldWidget(
       TextEditingController controller,
       String labelText,
